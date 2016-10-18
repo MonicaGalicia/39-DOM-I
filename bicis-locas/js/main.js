@@ -4,6 +4,7 @@ function validateForm(){
 	var apellido=document.getElementById("lastname").value;
 	var email=document.getElementById("inputEmail").value;
 	var password=document.getElementById("inputPassword").value;
+	var selecciona=document.getElementById("opciones").value;
 
 	if(nombre==="" || apellido==="" || email===""|| password===""){
 		alert("el campo esta vacio");
@@ -21,6 +22,8 @@ function validateForm(){
 	}else if(password==="password" || password==="123456" || password==="098754"){
 		alert("contraseña no permitida");
 		return false;
+	}else if(selecciona===""){
+		alert("Por favor selecciona una opción");
 	}
 	
 

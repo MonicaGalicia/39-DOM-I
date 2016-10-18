@@ -1,11 +1,30 @@
+
 function validateForm(){
-	/*Validar que los campos no estén vacios*/
-	if((document.formulario.nombre.value =="")&&(document.formulario.lastname.value =="")&&(document.formulario.email.value =="")&&(document.formulario.password.value =="")){
-		alert("Estos campos son obligatorios");
-		document.formulario.nombre.style.backgroundColor="#b74747";
-		document.formulario.lastname.style.backgroundColor="#b74747";
-		document.formulario.email.style.backgroundColor="#b74747";
-		document.formulario.password.style.backgroundColor="#b74747";
+	var nombre=document.getElementById("name").value;
+	var apellido=document.getElementById("lastname").value;
+	var email=document.getElementById("inputEmail").value;
+	var password=document.getElementById("inputPassword").value;
+
+	if(nombre==="" || apellido==="" || email===""|| password===""){
+		alert("el campo esta vacio");
+		return false;
+	}else if(!/^[A-Z][a-z]*$/g.test(document.getElementById('name').value)){
+           alert("La primer letra debe ser mayuscula");
+           return false;
+	}else if(!/^[A-Z][a-z]*$/g.test(document.getElementById('lastname').value)){
+           alert("La primer letra debe ser mayuscula");
+           return false;
+
+	}else if(password.length<6){
+		alert("La contraseña debe contener al menos 6 ");
+		return false;
+	}else if(password==="password" || password==="123456" || password==="098754"){
+		alert("contraseña no permitida");
+		return false;
 	}
+	
+
+
 }
+
 
